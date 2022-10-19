@@ -1,0 +1,58 @@
+#include<iostream>
+using namespace std;
+class car
+{
+	int model;
+	int price;
+public:
+	car();
+	void setm(int m);
+	void setp(int p);
+
+	int showm();
+	int showp();
+};
+car::car()
+{
+	model = 0;
+	price = 0;
+}
+void car::setm(int m)
+{
+	model = m;
+}
+int car::showm()
+{
+	return  model;
+}
+void car::setp(int p)
+{
+	price = p;
+}
+int car::showp()
+{
+	return  price;
+}
+int main()
+{
+	int size;
+	cout << "size" << endl;
+	cin >> size;
+	car* p = new car[size];
+	int m = 0, pr=0;
+	for (int i = 0; i < size; i++)
+	{
+		cout << "enter model of car and price of " << i + 1 << endl;
+		cin >> m >> pr;
+		p[i].setm(m);
+		p[i].setp(pr);
+	}
+	for (int i = 0; i < size; i++)
+	{
+
+		cout << "model no of car: " << i + 1 << endl;
+		cout << p[i].showm() << endl;
+		cout << "price of car: " << i + 1 << endl;
+		cout << p[i].showp() << endl;
+}
+}
